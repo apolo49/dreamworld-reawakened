@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="en">	
+	<string id="pg_ade_1">Pokémon Dream World is unavailable.</string>
+	<string id="pg_ade_2">pg_ade_2</string>
+	<string id="pg_ade_3">Pokémon Dream World is currently busy. Please try again later!</string>
+	<string id="pg_ade_4">Close</string>
+	<string id="pg_ade_5">Retry</string>
+</data>
