@@ -2,7 +2,7 @@
 <data locale="en">
 
     <!--Your Home-->
-    <string id="h_ca_1">[arg0]'s home</string> <!--Title when entering area-->
+    <string id="h_ca_1">[PGLニックネーム]'s home</string> <!--Title when entering area-->
     <string id="h_ca_7">Enter room.</string> <!--Door hover-->
     <string id="h_ca_8">Footprint Mat</string> <!--Mat hover-->
     <string id="fr_aa_6">Check Dream Pal map.</string>
@@ -21,7 +21,7 @@
     <string id="m_af_8">Action</string>
 
     <!--Garden-->
-    <string id="k_ad_1">[arg0]'s garden</string> 
+    <string id="k_ad_1">[arg0]'s garden</string>
 
     <!--Share Shelf-->
     <string id="s_aa_1">[arg0]'s Share Shelf</string>
