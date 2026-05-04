@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<data locale="ja">
-    <!--Met Pokemon Information Labels-->
+<data locale="en">
+    <!--Met Pokemon Information Labels--><!--Met Pokemon Information Labels-->
     <string id="t_ac_1">Pokémon Nickname</string>
     <string id="t_ac_2">PGL Nickname</string>
     <string id="t_ac_3">Pokémon</string>
