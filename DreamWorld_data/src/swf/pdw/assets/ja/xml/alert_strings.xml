@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data locale="ja">	
+	
+	<!--Availability-->
+	<string id="pg_ade_1">pg_ade_1</string>
+	<string id="pg_ade_2">pg_ade_2</string>
+	<string id="pg_ade_3">pg_ade_3</string>
+	<string id="pg_ade_4">pg_ade_4</string>
+	<string id="pg_ade_5">pg_ade_5</string>
+
+	<string id="pg_opa_1">読みこみ中です。</string>
+
+	<!--Leave the Pokemon Dream World Options-->
+	<string id="da_aa_1">ポケモンドリームワールドを終了します。</string>
+	<string id="da_aa_2">ポケモンを起こす準備をして終了</string>
+	<string id="da_aa_3">ゲームソフトで「ゲームシンク」をしてポケモンを起こせるようになるため、ゆめからさまさせて、「ポケモンドリームワールド」を終了します。&#xD;引きつづき、連れて行くポケモンやハイリンクに送るどうぐを確認します。</string>
+	<string id="da_aa_4">ポケモンを起こす準備をしないで終了</string>
+	<string id="da_aa_5">ポケモンを起こす準備をして終了する場合</string>
+	<string id="da_aa_6">ポケモンを起こす準備をしないで終了する場合</string>
+	<string id="da_ab_1">いったん終了する場合やポケモンを起こさずにつづきを楽しみたい場合は、こちらを選びます。</string>
+	<string id="da_ab_2">[！]ゆめの木でねがいごとをして、なかよくなったポケモンがいると、つづけて遊ぶときに虹がかからず、ゆめしまへいくことができません。</string>
+	<string id="da_ab_3">※ポケモンドリームワールドは、遊びはじめてから１時間たつと、自動的に終了します。注意してください。</string>
+	<string id="da_ab_4">ポケモンドリームワールドをつづける</string>
+
+	<!--Leave And Wake Up Submenu-->
+	<string id="dc_aa_1">連れて行くポケモン</string>
+	<string id="dc_aa_2">連れて行くポケモンには、ゲームソフトで「ゲームシンク」をしてポケモンを起こしたあと、ハイリンクへ行くと、ハイリンクのもりの中で出会えます。</string>
+	<string id="dc_aa_3">※ほかに連れて行きたいポケモンがいる場合は、[もどる]ボタンを押して、ホームの部屋の中にあるなかよしボードを確認してください。</string>
+	<string id="dc_aa_4">※ゆめの木でねがいごとをしてなかよくなったポケモンは、時間がたたないと、なかよしボードに反映されない場合があります。</string>
+	<string id="dc_aa_5">つぎへ</string>
+	<string id="dc_aa_6">もどる</string>
+	<!--It should go to list of items next but as of time of writing, pressing "Next" (or "Back") softlocks-->
+
+	<!--Leave and stay asleep submenu-->
+	<string id="o_az_1">ポケモンドリームワールドを終了しました。</string>
+
+	<!--Fennel at startup-->
+	<string id="pg_amh_1">ポケモンドリームワールドへようこそ！</string>
+	<string id="pg_amh_2">今回ポケモンドリームワールドでプレイできる時間は、&#xD;ただいまより１時間です。</string>
+	<string id="pg_amh_3">1時間以上たつと、自動的にポケモンドリームワールドが終了します。&#xD;注意してください。&#xD;自動的に終了した場合、プレイ中のデータが保存されない場合があります。1時間にたつとメッセージが表示されますので、指定に従ってポケモンドリームワールドを終了してください。</string>
+	<string id="pg_amh_4">とじる</string>
+
+	<!--AFK Pop-Up box - Unofficial text substitution, real text unknown-->
+	<string id="pg_amf_1">ポケモンドリームワールドが終了しました。</string>
+	<string id="pg_ay_2">とじる</string>
+
+	<!--You have been disconnected due to inactivity.-->
+</data>
