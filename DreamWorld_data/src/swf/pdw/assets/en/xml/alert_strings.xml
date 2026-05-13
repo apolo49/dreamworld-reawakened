@@ -40,9 +40,9 @@
 	<string id="pg_amh_3">You can only play for an hour in the Pokémon Dream World, then it&#xD;stops automatically. It's a good idea to stop playing and save your data&#xD;when asked, so you can be sure your data gets saved properly.</string>
 	<string id="pg_amh_4">Continue</string>
 
-	<!--AFK Pop-Up box - Unofficial text substitution, real text unknown-->
-	<string id="pg_amf_1">A database error has occured.&#xD;You have been disconnected.</string>
-	<string id="pg_ay_2">OK</string>
+	<!--AFK Pop-Up box-->
+	<string unofficial="true" id="pg_amf_1">A database error has occured.&#xD;You have been disconnected.</string>
+	<string unofficial="true" id="pg_ay_2">OK</string>
 
 	<!--You have been disconnected due to inactivity.-->
 </data>
