@@ -161,7 +161,7 @@ class MyApp(QtWidgets.QMainWindow):
     def init_trainer_data(self, trainer):
         self.save_trainer_name.setText(trainer.name)
         self.country.setText(trainer.country)
-        self.region.setText(trainer.region)
+        self.region.setText(trainer.region if trainer.region else None)
 
         if trainer.country:
             self.country.setText(trainer.country)
@@ -208,7 +208,7 @@ class MyApp(QtWidgets.QMainWindow):
             player_data = json.load(f)
 
         player_data["member"].update({
-            "country_id": str(extra_data.country.index(self.tr_data.country)),
+            "country_id": "220", #str(extra_data.country.index(self.tr_data.country)),
             "send_pokemon_count": player_data["member"]["send_pokemon_count"] + 1,
             "rom_id": self.tr_data.game,
             "rom_name": extra_data.version[self.tr_data.game],

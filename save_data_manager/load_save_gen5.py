@@ -437,7 +437,7 @@ class Trainer(DataReader):
 
         self.name      : str = self.read_str(0x4, 0x10)
         self.country   : str = extra_data.country[country_id]
-        self.region    : str = extra_data.regions[country_id][region_id]
+        self.region    : str = extra_data.regions[country_id][region_id] if country_id in extra_data.regions else 0
         self.language  : str = self.read_int(0x1E, 1)
         self.game      : str = self.read_int(0x1F, 1)
         self.gender    : str = extra_data.gender[self.read_int(0x21, 1)]
@@ -516,7 +516,7 @@ class SaveFile:
         with open(path, "rb") as f:
             self.data: bytearray = bytearray(f.read())
         self._path = path
-        self.game_version = "BW" if int.from_bytes(self.data[0x1941F : 0x19420]) in (20, 21) else "B2W2"
+        self.game_version = "BW" if self.data[0x1941F] in (20, 21) else "B2W2"
 
     # --- accessors ---
 

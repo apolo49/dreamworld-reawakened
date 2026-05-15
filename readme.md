@@ -13,6 +13,7 @@
     - Access http://127.0.0.1:8080/ in a browser that supports Flash
 
 # Save data manager
+This requires the installation of PyQt5 with `pip install PyQt5`
 
 If you open the terminal inside `save_data_manager` and run `python3 save_manager.py`, through a UI you can load a Gen5 save file (.sav only) and "send" a Pokémon to the Dream World. This will modify both `save_data/player_data.json` and `save_data/sleeping_pokemon.json`.
 
