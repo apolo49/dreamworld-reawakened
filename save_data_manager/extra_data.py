@@ -4143,22 +4143,28 @@ personal_data = {
   "(479, 1)": [
     "Rotom",
     "Electric",
-    "Water",
+    "Fire",
     "Medium Fast"
   ],
   "(479, 2)": [
     "Rotom",
     "Electric",
-    "Ice",
+    "Water",
     "Medium Fast"
   ],
   "(479, 3)": [
     "Rotom",
     "Electric",
-    "Flying",
+    "Ice",
     "Medium Fast"
   ],
   "(479, 4)": [
+    "Rotom",
+    "Electric",
+    "Flying",
+    "Medium Fast"
+  ],
+  "(479, 5)": [
     "Rotom",
     "Electric",
     "Grass",

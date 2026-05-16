@@ -132,7 +132,7 @@ class MyApp(QtWidgets.QMainWindow):
 
     @staticmethod
     def _get_form_str(pkmn):
-        if pkmn.natdex == 493:
+        if pkmn.natdex in (493, 649):
             return ""
         if pkmn.natdex in (521, 592, 593) and pkmn.gender == 1:
             return "-1"

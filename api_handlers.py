@@ -87,6 +87,10 @@ def handle_item_list(_query):
     sort_key     = int(_query.get("sort_key", 3))
     offset       = int(_query.get("offset", 0))
     rowcount     = int(_query.get("rowcount", 9999))
+    status       = int(_query.get("status", 0))
+
+    if status == 2:
+        return (b'{}')
 
     if item_kind_id == 0: #all items
         item_list = game_data.chest.data["list"]
@@ -225,6 +229,9 @@ def handle_waterpot_list_POST(_query):
     }
     return json.dumps(response).encode()
 
+def handle_item_delivery(_query):
+    print(json.dumps(_query, indent=2))
+
 DYNAMIC_GET_RESPONSES = {
     "pdw.croft.waterpot_list":   handle_waterpot_list_GET,
     "pdw.dreamland.top":         handle_dreamland_top,
@@ -237,9 +244,10 @@ DYNAMIC_GET_RESPONSES = {
 }
 
 DYNAMIC_POST_RESPONSES = {
-    "pdw.dreamland.game_clear":    handle_game_clear,
-    "pdw.croft.kinomi_sowing":     handle_kinomi_sowing,
-    "pdw.croft.kinomi_watering":   handle_kinomi_watering,
-    "pdw.croft.kinomi_harvesting": handle_kinomi_harvesting,
-    "pdw.croft.waterpot_list":     handle_waterpot_list_POST,
+    "pdw.dreamland.game_clear":      handle_game_clear,
+    "pdw.croft.kinomi_sowing":       handle_kinomi_sowing,
+    "pdw.croft.kinomi_watering":     handle_kinomi_watering,
+    "pdw.croft.kinomi_harvesting":   handle_kinomi_harvesting,
+    "pdw.croft.waterpot_list":       handle_waterpot_list_POST,
+    "pdw.item.item_delivery_update": handle_item_delivery
 }
