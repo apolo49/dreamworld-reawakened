@@ -524,45 +524,6 @@ regions = {
     ],
     72: [
         "None",
-        "Baden-Württemberg",
-        "Bayern",
-        "Berlin",
-        "Brandenburg",
-        "Bremen",
-        "Hamburg",
-        "Hesse",
-        "Mecklenburg-West Pomerania",
-        "Lower Saxony",
-        "North Rhine-Westphalia",
-        "Rhineland-Palatinate",
-        "Saarland",
-        "Saxony",
-        "Saxony-Anhalt",
-        "Schleswig-Holstein",
-        "Thuringia"
-    ],
-    73: [
-        "None",
-        "Andalusia",
-        "Aragon",
-        "Asturias",
-        "Balearic Islands",
-        "Basque Country",
-        "Canary Islands",
-        "Cantabria",
-        "Castile-La Mancha",
-        "Castile and León",
-        "Catalonia",
-        "Extremadura",
-        "Galicia",
-        "Madrid",
-        "Murcia",
-        "Navarre",
-        "La Rioja",
-        "Valencia"
-    ],
-    79: [
-        "None",
         "Åland Islands",
         "Lapland",
         "East Finland",
@@ -570,7 +531,7 @@ regions = {
         "Oulu",
         "West Finland"
     ],
-    95: [
+    73: [
         "None",
         "Aquitaine",
         "Alsace",
@@ -595,22 +556,26 @@ regions = {
         "Lorraine",
         "Centre"
     ],
-    102: [
+    79: [
         "None",
-        "East of England",
-        "East Midlands",
-        "Greater London",
-        "North East England",
-        "North West England",
-        "Northern Ireland",
-        "Scotland",
-        "South East England",
-        "South West England",
-        "Wales",
-        "West Midlands",
-        "Yorkshire and the Humber"
+        "Baden-Württemberg",
+        "Bayern",
+        "Berlin",
+        "Brandenburg",
+        "Bremen",
+        "Hamburg",
+        "Hesse",
+        "Mecklenburg-West Pomerania",
+        "Lower Saxony",
+        "North Rhine-Westphalia",
+        "Rhineland-Palatinate",
+        "Saarland",
+        "Saxony",
+        "Saxony-Anhalt",
+        "Schleswig-Holstein",
+        "Thuringia"
     ],
-    105: [
+    95: [
         "None",
         "Andaman and Nicobar Islands",
         "Andhra Pradesh",
@@ -648,7 +613,7 @@ regions = {
         "Uttarakhand",
         "West Bengal"
     ],
-    155: [
+    102: [
         "None",
         "Abruzzo",
         "Basilicata",
@@ -671,7 +636,7 @@ regions = {
         "Valle d'Aosta",
         "Veneto"
     ],
-    166: [
+    105: [
         "None",
         "Hokkaido (Sapporo)",
         "Hokkaido (Hakodate)",
@@ -724,7 +689,7 @@ regions = {
         "Kagoshima",
         "Okinawa"
     ],
-    174: [
+    155: [
         "None",
         "Akershus",
         "Aust-Agder",
@@ -749,7 +714,7 @@ regions = {
         "Vestfold",
         "Østfold"
     ],
-    195: [
+    166: [
         "None",
         "Lower Silesia",
         "Kuyavia-Pomerania",
@@ -768,7 +733,7 @@ regions = {
         "Greater Poland",
         "West Pomerania"
     ],
-    200: [
+    174: [
         "None",
         "Central Federal District",
         "Far Eastern Federal District",
@@ -779,7 +744,27 @@ regions = {
         "Urals Federal District",
         "North Caucasian Federal District"
     ],
-    218: [
+    195: [
+        "None",
+        "Andalusia",
+        "Aragon",
+        "Asturias",
+        "Balearic Islands",
+        "Basque Country",
+        "Canary Islands",
+        "Cantabria",
+        "Castile-La Mancha",
+        "Castile and León",
+        "Catalonia",
+        "Extremadura",
+        "Galicia",
+        "Madrid",
+        "Murcia",
+        "Navarre",
+        "La Rioja",
+        "Valencia"
+    ],
+    200: [
         "None",
         "Blekinge",
         "Dalarna",
@@ -803,6 +788,21 @@ regions = {
         "Västernorrland",
         "Vastmanland",
         "Västra Götaland"
+    ],
+    218: [
+        "None",
+        "East of England",
+        "East Midlands",
+        "Greater London",
+        "North East England",
+        "North West England",
+        "Northern Ireland",
+        "Scotland",
+        "South East England",
+        "South West England",
+        "Wales",
+        "West Midlands",
+        "Yorkshire and the Humber"
     ],
     220: [
         "None",
