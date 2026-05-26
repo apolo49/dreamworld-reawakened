@@ -5,8 +5,12 @@ try:
     from PyQt5 import QtWidgets, QtGui, QtCore, uic
 except ImportError:
     PyQt5 = None
-    from PyQt6 import QtWidgets, QtGui, QtCore, uic
-    from PyQt6.QtWidgets import QLabel
+    try:
+        from PyQt6 import QtWidgets, QtGui, QtCore, uic
+        from PyQt6.QtWidgets import QLabel
+    except ImportError:
+        print("Error: PyQt5 or PyQt6 is required to run this application.")
+        sys.exit(1)
 
 import extra_data
 import load_save_gen5
