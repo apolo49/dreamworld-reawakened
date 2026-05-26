@@ -340,7 +340,10 @@ def update_gamesync_status(status: PlayerStatus):
 # --------------------
 
 def lookup_str(str_type: str, index: int):
-    return raw_text[player_language][str_type][index]
+    try:
+        return raw_text[player_language][str_type][index]
+    except KeyError:
+        return None
 
 raw_text = {k: {} for k in language.values()}
 for folder in (ROOT_DIR / "raw_text").iterdir():
