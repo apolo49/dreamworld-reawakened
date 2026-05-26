@@ -1,0 +1,14 @@
+[project]
+name = "dreamworld-reawakened"
+version = "0.0.1"
+description = "Pokemon Dream World revival server"
+readme = "README.md"
+requires-python = ">=3.13"
+
+[dependency-groups] # This does not work at the moment, but it does run. Needs major overhaul to work.
+save-manager-qt-6 = [
+    "pyqt6>=6.11.0",
+]
+flash-browser-support = [
+    "bs4>=0.0.2",
+]
