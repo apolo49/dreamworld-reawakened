@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import json
-import time
+import psutil
 import utility
+from zoneinfo import ZoneInfo
+from datetime import datetime
 from random import choice, randint
 
 # ---------------------
@@ -54,7 +56,7 @@ def GET_my_island(_query):
     pkmn = utility.sleeping_pokemon
 
     response = {
-        "pokemon":                {**pkmn},
+        "pokemon":                 {**pkmn},
         "island_id":               201,
         "point":                   0,
         "trial_flag":              0,
@@ -90,7 +92,9 @@ def GET_my_island_area(_query):
 
 
 def GET_pdw_end(_query):
-    print(json.dumps(_query, indent=2))
+    for proc in psutil.process_iter():
+        if "flashplayer" in proc.name():
+            proc.kill()
 
     return b'{}'
 
@@ -99,7 +103,38 @@ def GET_pdw_end(_query):
 # ---------------------
 
 def POST_pdw_start(_query):
-    response = {"started_at": int(time.time())}
+    now_local = datetime.now().astimezone()
+    now_japan = now_local.astimezone(ZoneInfo("Asia/Tokyo"))
+
+    pokemon_no = utility.read_player_data()["member"]["pokemon_no"]
+
+    utility.write_player_data({"last_started_at": int(now_japan.timestamp())})
+    utility.write_player_data({"last_logined_at": int(now_japan.timestamp())})
+    utility.write_player_data({"last_started_at_timezone": int(now_local.timestamp())})
+
+    utility.write_player_data({"pokemon_name": utility.lookup_str("pokemon", pokemon_no)})
+
+    pkmn = utility.sleeping_pokemon
+
+    species_name = utility.lookup_str("pokemon", pkmn["pokemon_no"])
+
+    pkmn_data = {
+        "pokemon_no":       pkmn["pokemon_no"],
+        "pokemon_name":     species_name,
+        "form_no":          pkmn["form_no"],
+        "type1":            utility.lookup_str("type", pkmn["type1"]),
+        "type2":            utility.lookup_str("type", pkmn["type2"]),
+        "pokemon_nickname": pkmn["pokemon_nickname"] if pkmn["pokemon_nickname"] != species_name else None,
+        "oyaname":          pkmn["oyaname"],
+        "level":            pkmn["level"],
+        "sex":              pkmn["sex"],
+        "personality":      utility.lookup_str("nature", pkmn["personality"]),
+        "ball_name":        utility.lookup_str("ball", pkmn["ball_name"]),
+    }
+
+    utility.sleeping_pokemon = pkmn_data
+
+    response = {"started_at":int(now_local.timestamp())}
     return json.dumps(response).encode()
 
 

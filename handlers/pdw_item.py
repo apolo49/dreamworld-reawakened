@@ -38,6 +38,8 @@ def GET_item_list(_query):
 
     if status == 2:
         item_list = utility.read_entralink_data("items")
+        for item in item_list:
+            item["pokeitem"] = utility.lookup_str("item", item["pokeitem_id"])
         return json.dumps({"cnt": len(item_list), "list": item_list}).encode()
 
     if item_kind_id == 0:
@@ -77,7 +79,6 @@ def POST_item_delivery_update(_query):
         item_list.append(
                 {
                 "pokeitem_id":int(item_id),
-                "pokeitem": utility.lookup_str("item", int(item_id)),
                 "item_cnt":int(item_count)
                 }
             )

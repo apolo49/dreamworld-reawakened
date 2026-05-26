@@ -65,27 +65,6 @@ class PlayerStatus(Enum):
     DREAMING = auto()
     WAKE_READY = auto()
 
-def lookup_str(file: str, index: int):
-    if index is None:
-        return None
-
-    index = int(index)
-
-    with open(ROOT_DIR / "raw_text" / player_language / f"{file}.txt", "r", encoding="UTF-8") as f:
-        strings = f.read().splitlines()
-
-    return strings[index]
-
-def lookup_desc(index: int):
-    with open(ROOT_DIR / "raw_text" / player_language / "item_descriptions.txt", "r", encoding="UTF-8") as f:
-        strings = f.read().splitlines()
-
-    string = strings[index].split("\\n")
-
-    res = [None, None, None]
-    res[:len(string)] = string
-    return tuple(res)
-
 def generate_otoken():
     player_data = read_player_data()
     return f"{randint(1, 99)}dwt{player_data['member']['world_id']}{int(time.time()):x}.{randint(10000000, 99999999)}"
@@ -133,7 +112,7 @@ class ChestManager:
 
     def localize_names(self):
         for item in self.data["list"]:
-            item_desc = lookup_desc(item["pokeitem_id"])
+            item_desc = lookup_str("item_descriptions", item["pokeitem_id"])
 
             item["pokeitem"] = lookup_str("item", item["pokeitem_id"])
 
@@ -163,7 +142,7 @@ class ChestManager:
             curr_item_info = item_info[str(item_id)]
             self.data["cnt"] += 1
 
-            item_desc = lookup_desc(item_id)
+            item_desc = lookup_str("item_descriptions", item_id)
             new_item = {
                 "pokeitem_id": item_id,
                 "pokeitem": lookup_str("item", item_id),
@@ -211,7 +190,7 @@ class CropManager:
             if "pokeitem_id" not in crop:
                 continue
 
-            berry_desc = lookup_desc(crop["pokeitem_id"])
+            berry_desc = lookup_str("item_descriptions", crop["pokeitem_id"])
 
             crop["kinomi"] = lookup_str("item", crop["pokeitem_id"])
 
@@ -241,7 +220,7 @@ class CropManager:
 
         berry_id = pokeitem_id - 148
 
-        berry_desc = lookup_desc(pokeitem_id)
+        berry_desc = lookup_str("item_descriptions", pokeitem_id)
         plot.update({
             "my_croft_id": my_croft_id,
             "pokeitem_id": pokeitem_id,
@@ -355,3 +334,32 @@ def update_gamesync_status(status: PlayerStatus):
         raise FileNotFoundError("A sleeping Pokémon must be tucked to bed first.")
 
     write_player_data({"play_status": status.value})
+
+# --------------------
+# Init text lookup dict
+# --------------------
+
+def lookup_str(str_type: str, index: int):
+    try:
+        return raw_text[player_language][str_type][index]
+    except KeyError:
+        return None
+
+raw_text = {k: {} for k in language.values()}
+for folder in (ROOT_DIR / "raw_text").iterdir():
+    for file in folder.iterdir():
+        with open(ROOT_DIR / "raw_text" / folder.stem / file, "r", encoding="UTF-8") as f:
+            strings = f.read().splitlines()
+
+        if file.stem.endswith("_descriptions"):
+            raw_text[folder.stem][file.stem] = {}
+
+            for i, val in enumerate(strings):
+                string = val.split("\\n")
+                res = [None, None, None]
+                res[:len(string)] = string
+
+                raw_text[folder.stem][file.stem][i] = res
+
+        else:
+            raw_text[folder.stem][file.stem] = {i: val for i, val in enumerate(strings)}
