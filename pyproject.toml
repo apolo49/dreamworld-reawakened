@@ -10,6 +10,9 @@ dependencies = [
 ]
 
 [dependency-groups] # This does not work at the moment, but it does run. Needs major overhaul to work.
+save-manager-qt-5 = [
+    "pyqt5>=5.15.11",
+]
 save-manager-qt-6 = [
     "pyqt6>=6.11.0",
 ]
